@@ -3,14 +3,38 @@ Small Angular2 module I made for preloading images to cache.
 So far it only supports loading images, but this functionality may be extended in future.
 
 ### Installation
-    npm install angular2-resource-preloader
-    
+`npm install angular2-resource-preloader`
+### Configuration
+This module uses my mCollections library as dependency, and they have to be properly configured so they can be imported, here is configuration of SystemJS I use to get it working:
+```javascript
+(function (global) {
+  System.config({
+    //...
+    map: {
+      //...
+	  'preloader': 'npm:angular2-resource-preloader/dist/',
+	  'm-collections': 'npm:m-collections/lib/'
+    },
+    packages: {
+      //...
+	  'preloader':{
+		defaultExtension: 'js',
+		main: 'preload.module'
+	  },
+	  'm-collections':{
+		  defaultExtension: 'js',
+		  main: 'index'
+	  }
+    }
+  });
+})(this);
+```
 ### Usage
 Usage is pretty straightforward, import PreloaderModule in for example root module:
 ```javascript
 @NgModule({
 	imports:      [ BrowserModule, PreloadModule ],
-	...
+	//...
 	bootstrap:    [ RootComponent ]
 })
 export class RootModule { }
