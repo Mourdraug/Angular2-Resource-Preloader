@@ -1,6 +1,6 @@
-{
+vel{
   "name": "angular2-resource-preloader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
@@ -24,6 +24,7 @@
     "url": "https://github.com/Mourdraug/Angular2-Resource-Preloader/issues"
   },
   "main": "./dist/preload.module.js",
+  "types": "./dist/preload.module.d.ts",
   "dependencies": {
     "m-collections": ">=0.0.1"
   },
