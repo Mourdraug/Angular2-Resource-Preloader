@@ -1,6 +1,6 @@
 {
   "name": "angular2-resource-preloader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
